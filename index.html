@@ -13,7 +13,7 @@
 
 <body>
   <div style="width: 100%; height: 100%; background-color: gray; display: flex; flex-direction: column;">
-    <div style="flex: 1; display: flex; flex-direction: column;">
+    <div style="flex: 2; display: flex; flex-direction: column;">
       <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
         <h3>Shirts: <span id="shirt-count"></span></h3>
       </div>
@@ -31,10 +31,14 @@
       </div>
       <div style="flex: 1; display: flex; flex-direction: row;">
         <div id="shirt-btn" onclick="handleShirtBtnClick()" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #8ff4cf;">
-          <h3>Shirts</h3>
+          <div style="width: 10em; height: 10em; border-radius: 50%; background-color: #8ff4cf; display: flex; justify-content: center; align-items: center;">
+            <img id="shirt-img" src="./public/img/shirt-1.png" style="opacity: 0.8; height: 8em; width: 8em;" />
+          </div>
         </div>
         <div id="pants-btn" onclick="handlePantsBtnClick()" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #f2e060;">
-          <h3>Pants</h3>
+          <div style="width: 10em; height: 10em; border-radius: 50%; background-color: #8ff4cf; display: flex; justify-content: center; align-items: center;">
+            <img src="./public/img/pants-1.png" style="height: 8em; width: 8em;" />
+          </div>
         </div>
         <div id="underwear-btn" onclick="handleUnderwearBtnClick()" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #adf6dc;">
           <h3>Underwear</h3>
@@ -53,7 +57,10 @@
   </div>
 
   <audio id="coin-1" src="./public/audio/coin-1.wav" style="display: none;"></audio>
+  <audio id="coin-2" src="./public/audio/coin-2.wav" style="display: none;"></audio>
+  <audio id="coin-3" src="./public/audio/coin-3.wav" style="display: none;"></audio>
 
+  <script src="./public/lib/jquery-3.2.1.min.js"></script>
   <script src="./public/js/main.js"></script>
 </body>
 </html>

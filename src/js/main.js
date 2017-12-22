@@ -9,6 +9,7 @@ const initializeAttribute = (name, id) => {
 const initialize = () => {
   console.log('initialize')
   console.log(`Value of shirt-count is ${initializeAttribute('shirtCount', 'shirt-count')}`)
+  console.log(`Value of pants-count is ${initializeAttribute('pantsCount', 'pants-count')}`)
   console.log(`Value of pushup-count is ${initializeAttribute('pushupCount', 'pushup-count')}`)
 }
 
@@ -31,13 +32,35 @@ const makeSound = id => {
 
 const handleShirtBtnClick = () => {
   incrementAttribute('shirtCount', 'shirt-count', 1)
+  $('#shirt-img').animate({
+    opacity: '+=0.2',
+    width: '+=10',
+    height: '+=10'
+  }, 500, () => {
+    // Animation complete
+  })
+  setTimeout(() => {
+    $('#shirt-img').animate({
+      opacity: '-=0.2',
+      width: '-=10',
+      height: '-=10'
+    }, 500, () => {
+      // Animation complete
+    })
+  }, 700)
   makeSound('coin-1')
 }
 
-const handlePantsBtnClick = () => {}
+const handlePantsBtnClick = () => {
+  incrementAttribute('pantsCount', 'pants-count', 1)
+  makeSound('coin-3')
+}
 
 const handleUnderwearBtnClick = () => {}
 
 const handleSocksBtnClick = () => {}
 
-const handlePushupsBtnClick = () => incrementAttribute('pushupCount', 'pushup-count', 10)
+const handlePushupsBtnClick = () => {
+  incrementAttribute('pushupCount', 'pushup-count', 10)
+  makeSound('coin-2')
+}
