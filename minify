@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# source javascript file should go on the left
+# destination javascript file should go on the right
+uglifyjs public/js/main.js -c -m -o public/js/main.min.js
+
+# destination css file should go on the left
+# source css file should go on the right
+cleancss -o public/css/main.min.css public/css/main.css

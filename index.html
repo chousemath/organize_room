@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sprite Walk</title>
+  <meta name="description" content="Practice rendering a sprite in a canvas">
+  <meta name="author" content="Joseph Choi">
+
+  <link rel="stylesheet" href="./public/css/main.css">
+</head>
+
+<body>
+  <div style="width: 100%; height: 100%; background-color: gray; display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+        <h3>Shirts: <span id="shirt-count">0</span></h3>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+        <h3>Pants: <span id="pants-count"></span></h3>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+        <h3>Underwear: <span id="underwear-count"></span></h3>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+        <h3>Socks: <span id="socks-count"></span></h3>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: row;">
+        <div id="shirt-btn" onclick="handleShirtBtnClick()" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #8ff4cf;">
+          <h3>Shirts</h3>
+        </div>
+        <div id="pants-btn" onclick="handlePantsBtnClick" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #f2e060;">
+          <h3>Pants</h3>
+        </div>
+        <div id="underwear-btn" onclick="handleUnderwearBtnClick" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #adf6dc;">
+          <h3>Underwear</h3>
+        </div>
+        <div id="socks-btn" onclick="handleSocksBtnClick" style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #cefaea;">
+          <h3>Socks</h3>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+        <img src="./public/img/r_1.gif" style="max-width: 250px;" />
+    </div>
+  </div>
+
+  <script src="./public/js/main.js"></script>
+</body>
+</html>
