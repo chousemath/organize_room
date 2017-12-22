@@ -10,15 +10,28 @@ var initializeAttribute = function initializeAttribute(name, id) {
 var initialize = function initialize() {
   console.log('initialize');
   console.log('Value of shirt-count is ' + initializeAttribute('shirtCount', 'shirt-count'));
+  console.log('Value of pushup-count is ' + initializeAttribute('pushupCount', 'pushup-count'));
 };
 
 initialize();
 
+var incrementAttribute = function incrementAttribute(name, id, amount) {
+  var attribute = window.localStorage.getItem(name);
+  if (attribute) attribute = parseInt(attribute);else attribute = 0;
+  var incrementedAttribute = attribute + amount;
+  window.localStorage.setItem(name, incrementedAttribute);
+  document.getElementById(id).innerHTML = incrementedAttribute;
+  return incrementedAttribute;
+};
+
+var makeSound = function makeSound(id) {
+  var audio = document.getElementById(id);
+  audio.play();
+};
+
 var handleShirtBtnClick = function handleShirtBtnClick() {
-  var shirtCount = window.localStorage.getItem('shirtCount');
-  if (shirtCount) shirtCount = parseInt(shirtCount);else shirtCount = 0;
-  window.localStorage.setItem('shirtCount', shirtCount + 1);
-  document.getElementById('shirt-count').innerText = shirtCount + 1;
+  incrementAttribute('shirtCount', 'shirt-count', 1);
+  makeSound('coin-1');
 };
 
 var handlePantsBtnClick = function handlePantsBtnClick() {};
@@ -28,8 +41,5 @@ var handleUnderwearBtnClick = function handleUnderwearBtnClick() {};
 var handleSocksBtnClick = function handleSocksBtnClick() {};
 
 var handlePushupsBtnClick = function handlePushupsBtnClick() {
-  var pushupCount = window.localStorage.getItem('pushupCount');
-  if (pushupCount) pushupCount = parseInt(pushupCount);else pushupCount = 0;
-  window.localStorage.setItem('pushupCount', pushupCount + 10);
-  document.getElementById('pushup-count').innerHTML = pushupCount + 10;
+  return incrementAttribute('pushupCount', 'pushup-count', 10);
 };
