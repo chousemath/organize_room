@@ -18,3 +18,11 @@ const handlePantsBtnClick = () => {}
 const handleUnderwearBtnClick = () => {}
 
 const handleSocksBtnClick = () => {}
+
+const handlePushupsBtnClick = () => {
+  let pushupCount = window.sessionStorage.getItem('pushupCount')
+  if (pushupCount) pushupCount = parseInt(pushupCount)
+  else pushupCount = 0
+  window.sessionStorage.setItem('pushupCount', pushupCount + 10)
+  document.getElementById('pushup-count').innerHTML = (pushupCount + 10)
+}
